@@ -7,6 +7,7 @@ int main(){
 	Matrix m,cofactores,trans,respuesta;
 	Vector f1, f2, f3;
 	
+	
 	f1.push_back(2);
 	f1.push_back(2);
 	f1.push_back(3);
@@ -25,11 +26,13 @@ int main(){
 	
 	m.push_back(f3);
 	
+	float det = determinant(m);
+	
 	if(determinant(m) != 0){
 		
 		cofactors(m,cofactores);
 		transpose(cofactores,trans);
-		productRealMatrix(determinant(m),m,respuesta);
+		productRealMatrix(1/det,cofactores,respuesta);
 		
 		showMatrix(respuesta);
 		
